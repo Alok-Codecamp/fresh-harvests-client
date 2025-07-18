@@ -3,6 +3,7 @@ import Navbar from '../shared/Navbar'
 import Image from 'next/image'
 import rotateLeaf from '@/assets/header/rotate-leaf.png'
 import girl from '@/assets/header/header-banner-girl.png'
+import mobileGirl from '@/assets/header/croped-girl.png'
 import arrow from '@/assets/header/arrow.png'
 import plate from '@/assets/header/header-banner-plate.png'
 import playStore from '@/assets/header/playStore.png'
@@ -51,8 +52,8 @@ const Header = () => {
           <div className='hidden  md:block lg:hidden mt-52'>
             <Image src={girl} alt='girl' width={550} height={550} />
           </div>
-          <div className='md:hidden -mt-72 w-fit ml-auto -mr-20'>
-            <Image src={girl} alt='girl' width={350} height={350} />
+          <div className='md:hidden -mt-68'>
+            <Image src={mobileGirl} alt='girl' width={200} height={200} className='ml-auto'/>
           </div>
           
         </div>
