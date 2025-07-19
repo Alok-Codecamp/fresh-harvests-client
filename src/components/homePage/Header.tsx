@@ -37,8 +37,8 @@ const Header = () => {
             <div className='mt-20 lg:mt-4'>
               <p className='text-sm font-light'>Download app</p>
               <div className='flex items-center absolute z-0'>
-                <Image src={playStore} alt='playStore' width={120} height={120} className='mr-4' />
-                <Image src={appleStore} alt='appleStore' width={120} height={120} className='ml-4' />
+                <Image src={appleStore} alt='appleStore' width={120} height={120} className='mr-4' />
+                <Image src={playStore} alt='playStore' width={120} height={120} className='ml-4' />
               </div>
             </div>
           </div>
