@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono,Rubik } from "next/font/google";
+import { Geist_Mono,Rubik } from "next/font/google";
 import "./globals.css";
+import Providers from "@/lib";
 
 const rubik = Rubik({
   variable: "--font-rubik",
@@ -8,10 +9,7 @@ const rubik = Rubik({
   weight: ['300', '400', '500', '600', '700'],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+
 
 export const metadata: Metadata = {
   title: "Fresh harvests",
@@ -28,7 +26,7 @@ export default function RootLayout({
       <body
         className={`${rubik.className}`}
       >
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

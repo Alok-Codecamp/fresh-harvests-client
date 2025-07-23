@@ -1,7 +1,20 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
-};
-
-export default nextConfig;
+module.exports = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'i.ibb.co.com',
+        
+        pathname: '/**',
+        
+      },
+      {
+        protocol: 'https',
+        hostname: 'upload.wikimedia.org',
+        
+        pathname: '/**',
+        
+      },
+    ],
+  },
+}
