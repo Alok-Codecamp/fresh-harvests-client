@@ -10,16 +10,17 @@ import { Category } from '@/types/category.types'
 const OurFreshProducts = () => {
   const [activeCategory, setActiveCategory] = useState<string>('All');
   const [activeProduct,setActiveCart] = useState<string>('banana')
-  const [filteredProducts,setFilteredProducts] = useState<Product[]>([])
+  const {data:products,isLoading} = useGetAllProductQuery([])
+  const [filteredProducts,setFilteredProducts] = useState<Product[]>(products?.data)
   const categories = ['All', 'fruits', 'Vegetable', 'Salad'];
 
   const {data:productCategories} = useGetAllCategoryQuery([]);
-  const {data:products,isLoading} = useGetAllProductQuery([])
+  
   // console.log(productCategories?.data);
 
-  const handleFilter = (category:string)=>{
+  const handleFilter = (category:string='All')=>{
     setActiveCategory(category)
-    if(category==='All'){
+    if(category==="All"){
       setFilteredProducts(products?.data)
     }
     else{
@@ -59,7 +60,8 @@ console.log(filteredProducts)
       {/* our fresh product  */}
       <div className='grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4  mx-auto'>
         {
-        filteredProducts?.map((product:Product,idx:number)=>(
+        isLoading?<div className='w-fit mx-auto'> <svg className="mr-3 size-5 animate-spin ..." viewBox="0 0 24 24">
+    </svg></div>: filteredProducts?.map((product:Product,idx:number)=>(
           <div key={idx} className=' mx-6 lg:mx-10 my-10'>
         {/* image container  */}
         <div className='w-fit mx-auto h-32'>
